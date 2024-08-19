@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 import  secureLocalStorage  from  "react-secure-storage"
 import './Style.css'
 import DashNav from './DashNav';
@@ -26,17 +26,6 @@ const Dashboard = () => {
                     <div className="w-1/4 pl-2">
                         <DashRightSide />
                     </div>
-                </div>
-
-                <div className="w-full bg-[#0e1c34] p-6 rounded-lg ">
-
-                    <hr />
-
-                    <div className="my-4 mx-8">
-                        <p className="text-xl text-gray-500">Email : { EmailUser }</p>
-                        <p className="text-xl text-gray-500">Role: { RoleUser }</p>                        
-                    </div>
-                    <button onClick={logout} className="bg-red-500 text-white rounded py-2 px-4 shadow-md duration-500 hover:bg-red-600 font-semibold">Logout</button>
                 </div>
             </div>
         )
