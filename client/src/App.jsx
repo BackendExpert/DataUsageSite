@@ -4,6 +4,7 @@ import SignUp from "./components/LoginSignUpTW/SignUp";
 import Dashboard from "./components/Dashboard/Dashboard";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import DashSummary from "./components/Dashboard/DashSummary";
+import PeoTv from "./components/Dashboard/PeoTv";
 
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
         <Route path="/SignUp" element={<SignUp /> } />
         <Route path="/Dashboard/" element={<PrivateRoute ProtectRoute={<Dashboard />} />} >
           <Route path="Summary" element={<PrivateRoute ProtectRoute={<DashSummary /> } /> } />
+          <Route path="PeoTv" element={<PrivateRoute ProtectRoute={<PeoTv /> } /> } />
         </Route>
       </Routes> 
     </BrowserRouter>

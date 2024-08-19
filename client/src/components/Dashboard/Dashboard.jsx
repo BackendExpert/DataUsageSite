@@ -22,6 +22,7 @@ const Dashboard = () => {
                 <div className="md:flex">
                     <div className="w-3/4">
                         <DashNav />
+                        <Outlet />
                     </div>
                     <div className="w-1/4 pl-2">
                         <DashRightSide />
