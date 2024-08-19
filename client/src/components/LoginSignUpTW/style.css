@@ -1,0 +1,15 @@
+.containerLogin {
+    display: grid;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    grid-template-areas: "bannerView publicViews";
+}
+
+.imageDiv{
+    grid-area: 'bannerView';
+}
+
+.viewForm{
+    grid-area: 'publicViews';
+}
