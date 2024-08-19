@@ -75,9 +75,11 @@ const SignIn = () => {
                         </form>
                     </div>
                     <div className="">
-                        <h1 className="text-white">Don't have Account ? <a href="" className='text-blue-400'>Register</a></h1>
-                    </div>
+                        <h1 className="text-white">Don't have Account ? <a href="SignUp" className='text-blue-400'>Register</a></h1>
+                    </div>        
+                    <h1 className="text-white mt-4 font-semibold">This site is developed only for Educational Purposes</h1>            
                 </div>
+
             </div>
         </div>
     )
