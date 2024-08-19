@@ -47,13 +47,11 @@ const SignIn = () => {
     return (
         <div className="bg-[#0b2a58] min-h-screen w-full">
             <div className="containerLogin">
-                <div className="">
-                    <div className="imageDiv">
-                        asdasd
-                    </div>
-                    <div className="viewForm">
-                        asd
-                    </div>
+                <div className="imageDiv">
+                    asdasd
+                </div>
+                <div className="viewForm">
+                    asd
                 </div>
             </div>
         </div>
