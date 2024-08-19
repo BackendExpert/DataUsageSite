@@ -11,7 +11,9 @@ export default function App() {
       <Routes>
         <Route path="/" element={<SignIn />} />
         <Route path="/SignUp" element={<SignUp /> } />
-        <Route path="/Dashboard" element={<PrivateRoute ProtectRoute={<Dashboard /> }/> } />
+        <Route path="/Dashboard/" element={<PrivateRoute ProtectRoute={<Dashboard />} />} >
+          
+        </Route>
       </Routes> 
     </BrowserRouter>
   )
