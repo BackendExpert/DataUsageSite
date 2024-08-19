@@ -27,7 +27,7 @@ const SignIn = () => {
             //store token in localstorage
             localStorage.setItem('LoginToken', loginToken)
 
-            if(res.data.Msg === "Success"){
+            if(res.data.Status === "Success"){
                 alert("Login Successfull")
                 localStorage.setItem('token', res.data.Token)
                 navigate('/Dashboard/Home')
