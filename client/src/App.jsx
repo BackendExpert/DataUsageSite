@@ -3,6 +3,7 @@ import SignIn from "./components/LoginSignUpTW/SignIn";
 import SignUp from "./components/LoginSignUpTW/SignUp";
 import Dashboard from "./components/Dashboard/Dashboard";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import DashSummary from "./components/Dashboard/DashSummary";
 
 
 export default function App() {
@@ -12,7 +13,7 @@ export default function App() {
         <Route path="/" element={<SignIn />} />
         <Route path="/SignUp" element={<SignUp /> } />
         <Route path="/Dashboard/" element={<PrivateRoute ProtectRoute={<Dashboard />} />} >
-          
+          <Route path="Summary" element={<PrivateRoute ProtectRoute={<DashSummary /> } /> } />
         </Route>
       </Routes> 
     </BrowserRouter>

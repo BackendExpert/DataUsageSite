@@ -3,7 +3,7 @@ import { BsMegaphoneFill, BsPhoneFill, BsRouterFill, BsTelephoneFill, BsTvFill }
 
 const DashNav = () => {
     const DashNavUp = [
-        {name: "BroadBand", Icon: <BsRouterFill className='text-green-500 h-8 w-auto'/>, Link: ""},
+        {name: "BroadBand", Icon: <BsRouterFill className='text-green-500 h-8 w-auto'/>, Link: "Summary"},
         {name: "PEOTV", Icon: <BsTvFill className='text-green-500 h-8 w-auto'/>, Link: ""},
         {name: "Voice", Icon: <BsTelephoneFill className='text-green-500 h-8 w-auto'/>, Link: ""},
         {name: "Mobile", Icon: <BsPhoneFill className='text-green-500 h-8 w-auto'/>, Link: ""},
