@@ -1,0 +1,9 @@
+.dashContainer {
+    padding: 40px 180px;
+}
+
+@media only screen and (max-width: 390px) {
+    .dashContainer {
+        padding: 40px 10px;
+    }    
+}
