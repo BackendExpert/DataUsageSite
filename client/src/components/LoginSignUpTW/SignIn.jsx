@@ -48,10 +48,10 @@ const SignIn = () => {
         <div className="bg-[#0b2a58] min-h-screen w-full">
             <div className="containerLogin">
                 <div className="imageDiv">
-                    asdasd
+                    <img src="https://wallpapers.com/images/high/data-fingerprint-system-brahlfrli6ga8qlt.webp" alt="" className='imageLogin'/>
                 </div>
                 <div className="viewForm">
-                    asd
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam ad non possimus consequatur assumenda accusamus, quo inventore nobis sapiente officiis laudantium magni voluptatibus architecto impedit tempore at pariatur vel asperiores?
                 </div>
             </div>
         </div>

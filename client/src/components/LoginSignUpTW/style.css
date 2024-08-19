@@ -3,13 +3,31 @@
     min-height: 100vh;
     justify-content: center;
     align-items: center;
-    grid-template-areas: "bannerView publicViews";
+    grid-template-areas: "ImageView FormView";
 }
 
 .imageDiv{
-    grid-area: 'bannerView';
+    grid-area: 'ImageView';
 }
 
 .viewForm{
-    grid-area: 'publicViews';
+    grid-area: 'FormView';
+    position: relative;
+    height: 610px;
+    min-width: 388px;
+    max-width: 388px;
+    background: #0f3b7a;
+    border-radius: 0 12px 12px 0;
+    padding: 40px;
+}
+
+.imageDiv .imageLogin{
+    max-width: 400px;
+    min-width: 400px;
+    width: auto;
+    height: 610px;
+    border-radius: 12px 0 0 12px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
