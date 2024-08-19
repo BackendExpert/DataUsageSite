@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import  secureLocalStorage  from  "react-secure-storage"
 import './Style.css'
+import DashNav from './DashNav';
+import DashRightSide from './DashRightSide';
 
 const Dashboard = () => {
     const navigate = useNavigate()
@@ -17,8 +19,17 @@ const Dashboard = () => {
     if(RoleUser !== null && EmailUser !== null){
         return (
             <div className="min-h-screen bg-[#0f3b7a] dashContainer w-full">
+                <div className="md:flex">
+                    <div className="w-3/4">
+                        <DashNav />
+                    </div>
+                    <div className="w-1/4 pl-2">
+                        <DashRightSide />
+                    </div>
+                </div>
+
                 <div className="w-full bg-[#0e1c34] p-6 rounded-lg ">
-                    <h1 className="text-gray-500 font-semibold text-2xl">Welcome to Dashboard</h1>
+
                     <hr />
 
                     <div className="my-4 mx-8">

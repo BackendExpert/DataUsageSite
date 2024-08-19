@@ -3,11 +3,11 @@ import { BsMegaphoneFill, BsPhoneFill, BsRouterFill, BsTelephoneFill, BsTvFill }
 
 const DashNav = () => {
     const DashNavUp = [
-        {name: "BroadBand", Icon: <BsRouterFill />, Link: ""},
-        {name: "PEOTV", Icon: <BsTvFill />, Link: ""},
-        {name: "Voice", Icon: <BsTelephoneFill />, Link: ""},
-        {name: "Mobile", Icon: <BsPhoneFill />, Link: ""},
-        {name: "Promosion", Icon: <BsMegaphoneFill />, Link: ""},       
+        {name: "BroadBand", Icon: <BsRouterFill className='text-green-500 h-8 w-auto'/>, Link: ""},
+        {name: "PEOTV", Icon: <BsTvFill className='text-green-500 h-8 w-auto'/>, Link: ""},
+        {name: "Voice", Icon: <BsTelephoneFill className='text-green-500 h-8 w-auto'/>, Link: ""},
+        {name: "Mobile", Icon: <BsPhoneFill className='text-green-500 h-8 w-auto'/>, Link: ""},
+        {name: "Promosion", Icon: <BsMegaphoneFill className='text-green-500 h-8 w-auto'/>, Link: ""},       
     ]
   return (
     <div>
@@ -15,9 +15,14 @@ const DashNav = () => {
             {
                 DashNavUp.map((DashData, index) => {
                     return (
-                        <div className="">
-                            {DashData.name}
-                        </div>
+                        <a href={DashData.Link} className="">
+                            <div className="bg-blue-600 py-8 px-8 rounded-xl mb-4">
+                                <div className="md:flex">
+                                    {DashData.Icon}
+                                    <p className="text-white text-xl font-semibold pl-2 pt-1">{DashData.name}</p>
+                                </div>
+                            </div>
+                        </a>
                     )
                 })
             }
