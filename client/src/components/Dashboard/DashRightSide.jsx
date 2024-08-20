@@ -13,7 +13,7 @@ const DashRightSide = () => {
   return (
     <div>
         <div className="bg-blue-600/60 rounded-xl shadow-md p-2">
-                <div className="md:grid grid-cols-3 gap-2">
+                <div className="grid grid-cols-3 gap-2">
                     {
                         RightUpDash.map((data, index) => {
                             return (

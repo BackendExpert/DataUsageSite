@@ -24,7 +24,7 @@ const Dashboard = () => {
                         <DashNav />
                         <Outlet />
                     </div>
-                    <div className="md:w-1/4 pl-2">
+                    <div className="md:w-1/4 md:pl-2">
                         <DashRightSide />
                     </div>
                 </div>

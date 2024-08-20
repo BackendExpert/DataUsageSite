@@ -13,7 +13,7 @@ const DashSummary = () => {
 
   return (
     <div className=''>
-      <div className="bg-blue-600 md:flex justify-between  rounded-xl border border-white/30">
+      <div className="bg-blue-600 md:flex md:justify-between grid grid-cols-2  rounded-xl border border-white/30">
         {
           SummaryData.map((data, index) => {
             return (
