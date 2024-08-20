@@ -6,6 +6,9 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import PeoTv from "./components/Dashboard/PeoTv";
 import DailyUse from "./components/Dashboard/DailyUse";
 import SummaryData from "./components/Dashboard/SummaryData";
+import PackageUpgrade from "./components/Dashboard/PackageUpgrade";
+import ExtraGB from "./components/Dashboard/ExtraGB";
+import DataAddons from "./components/Dashboard/DataAddons";
 
 
 export default function App() {
@@ -16,6 +19,9 @@ export default function App() {
         <Route path="/SignUp" element={<SignUp /> } />
         <Route path="/Dashboard/" element={<PrivateRoute ProtectRoute={<Dashboard />} />} >
           <Route path="Summary" element={<PrivateRoute ProtectRoute={<SummaryData /> } /> } />
+          <Route path="PackageUpgrade" element={<PrivateRoute ProtectRoute={<PackageUpgrade /> } /> } />
+          <Route path="ExtraGB" element={<PrivateRoute ProtectRoute={<ExtraGB /> } /> } />
+          <Route path="DataAddons" element={<PrivateRoute ProtectRoute={<DataAddons /> } /> } />
           <Route path="DailyUse" element={<PrivateRoute ProtectRoute={<DailyUse /> } /> } />
           <Route path="PeoTv" element={<PrivateRoute ProtectRoute={<PeoTv /> } /> } />
         </Route>
