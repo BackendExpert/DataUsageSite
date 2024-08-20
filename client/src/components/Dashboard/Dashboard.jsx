@@ -28,6 +28,7 @@ const Dashboard = () => {
                         <DashRightSide />
                     </div>
                 </div>
+                <h1 className="font-semibold text-white">This Site is developed only for Educational Purpuses</h1>
             </div>
         )
     }

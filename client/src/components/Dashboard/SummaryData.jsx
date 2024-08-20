@@ -17,11 +17,11 @@ const SummaryData = () => {
         <PackageInfo />
 
         <div className="md:flex my-2">
-            <div className='md:w-1/3 mr-2'>
+            <div className='md:w-1/3 mr-2 md:block grid grid-cols-2 gap-2'>
                 {
                     SummarySideData.map((data, index) => {
                         return (
-                            <div className="w-full bg-blue-600 p-4 rounded mr-1 mb-2 text-white cursor-pointer" key={index}>
+                            <div className="w-full bg-blue-600 p-4 rounded md:mr-1 mb-2 text-white cursor-pointer" key={index}>
                                 <p className="text-xl font-semibold text-center">{data.name}</p>
                                 <p className="text-center mt-2">{data.value}</p>
                             </div>  
