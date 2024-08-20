@@ -17,7 +17,7 @@ const SummaryData = () => {
         <PackageInfo />
 
         <div className="md:flex my-2">
-            <div className='w-1/3 mr-2'>
+            <div className='md:w-1/3 mr-2'>
                 {
                     SummarySideData.map((data, index) => {
                         return (
