@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     grid-template-areas: "ImageView FormView";
+    padding: 5% 0;
 }
 
 .imageDiv{

@@ -30,10 +30,14 @@ const SignIn = () => {
             if(res.data.Status === "Success"){
                 alert("Login Successfull")
                 localStorage.setItem('token', res.data.Token)
-                navigate('/Dashboard/Summary')
+                // navigate('/Dashboard/Summary')
                 // login user Email 
                 secureLocalStorage.setItem('Login1', res.data.Result.email)
                 secureLocalStorage.setItem('Login2', res.data.Result.Role)      
+
+                if(res.data.Result.Role === "User"){
+                    navigate('/Dashboard/Summary')  
+                }
             }
             else{
                 alert(res.data.Error)
