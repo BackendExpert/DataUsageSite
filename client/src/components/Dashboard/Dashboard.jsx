@@ -20,11 +20,11 @@ const Dashboard = () => {
         return (
             <div className="min-h-screen bg-[#0f3b7a] dashContainer w-full">
                 <div className="md:flex">
-                    <div className="w-3/4">
+                    <div className="md:w-3/4">
                         <DashNav />
                         <Outlet />
                     </div>
-                    <div className="w-1/4 pl-2">
+                    <div className="md:w-1/4 pl-2">
                         <DashRightSide />
                     </div>
                 </div>
