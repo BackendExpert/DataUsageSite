@@ -4,6 +4,7 @@ import  secureLocalStorage  from  "react-secure-storage"
 import './Style.css'
 import DashNav from './DashNav';
 import DashRightSide from './DashRightSide';
+import DashNavAdmin from './Admin/DashNavAdmin';
 
 const Dashboard = () => {
     const navigate = useNavigate()
@@ -19,10 +20,10 @@ const Dashboard = () => {
     if(RoleUser !== null && EmailUser !== null){
         if(RoleUser === "SuperAdmin"){
             return (
-                <div className="min-h-screen bg-white w-full">
-                    <div className="md:flex">
+                <div className="md:px-[8%] min-h-screen bg-white w-full">
+                    <div className="bg-red-500">
                         <div className="md:w-3/4">
-                            <DashNav />
+                            <DashNavAdmin />
                             <Outlet />
                         </div>
                     </div>
