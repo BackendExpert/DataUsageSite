@@ -5,6 +5,7 @@ import './Style.css'
 import DashNav from './DashNav';
 import DashRightSide from './DashRightSide';
 import DashNavAdmin from './Admin/DashNavAdmin';
+import DashSide from './Admin/DashSide';
 
 const Dashboard = () => {
     const navigate = useNavigate()
@@ -20,9 +21,12 @@ const Dashboard = () => {
     if(RoleUser !== null && EmailUser !== null){
         if(RoleUser === "SuperAdmin"){
             return (
-                <div className="md:px-[8%] min-h-screen bg-white w-full">
-                    <div className="bg-red-500">
-                        <div className="md:w-3/4">
+                <div className="min-h-screen bg-white w-full">
+                    <div className="bg-red-500 md:flex">
+                        <div className="w-1/5">
+                            <DashSide />
+                        </div>
+                        <div className="md:w-full">
                             <DashNavAdmin />
                             <Outlet />
                         </div>
