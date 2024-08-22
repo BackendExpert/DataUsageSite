@@ -1,5 +1,6 @@
 import React from 'react'
 import UsersImg from '../../../assets/Users.png'
+import UsersRequestImg from '../../../assets/UserRequest.png'
 
 const DashHome = () => {
     const DashData = [
@@ -16,7 +17,7 @@ const DashHome = () => {
       },
       {
         id: 2,
-        img: UsersImg,
+        img: UsersRequestImg,
         text1: 'User Requests',
         text1Value: 900,
         text2: 'Today',
@@ -39,8 +40,7 @@ const DashHome = () => {
       {
         id: 4,
         img: UsersImg,
-        text1: 'User Accouts',
-        text1Value: 900,
+        text1: 'Income',
         text2: 'Today',
         text2Value: '12',
         text3: 'Rate',
