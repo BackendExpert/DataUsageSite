@@ -38,6 +38,9 @@ const SignIn = () => {
                 if(res.data.Result.Role === "User"){
                     navigate('/Dashboard/Summary')  
                 }
+                if(res.data.Result.Role === "SuperAdmin"){
+                    navigate('/Dashboard/Home')
+                }
             }
             else{
                 alert(res.data.Error)
