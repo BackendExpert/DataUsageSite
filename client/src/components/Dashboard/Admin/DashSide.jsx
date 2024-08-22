@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { BsChevronUp, BsChevronDown, BsGearFill, BsList, BsSpeedometer2, BsX, BsPersonFill, BsPeople, BsWifi, BsBoxes } from "react-icons/bs";
+import { BsChevronUp, BsChevronDown, BsGearFill, BsList, BsSpeedometer2, BsX, BsPersonFill, BsPeople, BsWifi, BsBoxes, BsMegaphone } from "react-icons/bs";
 import axios from 'axios';
 
 const DashSide = () => {
@@ -36,11 +36,15 @@ const DashSide = () => {
             {id: 2, name: "Mange Packages ", link: '/Dashboard/ManageProducts'},
         ]}, 
         {id: 4, name: "Other Packages", link: '', icon: <BsBoxes className='h-5 w-auto'/>, submenu: [
-            {id: 1, name: "New Package ", link: '/Dashboard/AddProduct'},
-            {id: 2, name: "Mange Packages ", link: '/Dashboard/ManageProducts'},
+            {id: 1, name: "PEO TV ", link: '/Dashboard/AddProduct'},
+            {id: 2, name: "Voice ", link: '/Dashboard/ManageProducts'},
         ]},
-        {id: 5, name: "Profile ", link: '/Dashboard/User', icon: <BsPersonFill className='h-5 w-auto'/>}, 
-        {id: 6, name: "Settings", link: '/Dashboard/Settings', icon: <BsGearFill className='h-5 w-auto'/>},    
+        {id: 5, name: "Promotions", link: '', icon: <BsMegaphone className='h-5 w-auto'/>, submenu: [
+            {id: 1, name: "New Promotions", link: '/Dashboard/AddProduct'},
+            {id: 2, name: "Manage Promotions", link: '/Dashboard/ManageProducts'},
+        ]},
+        {id: 6, name: "Profile ", link: '/Dashboard/User', icon: <BsPersonFill className='h-5 w-auto'/>}, 
+        {id: 7, name: "Settings", link: '/Dashboard/Settings', icon: <BsGearFill className='h-5 w-auto'/>},    
       ]
 
 
