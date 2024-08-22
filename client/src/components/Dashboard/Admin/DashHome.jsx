@@ -119,7 +119,7 @@ const DashHome = () => {
                         {
                             DashTableData.map((dataDash, index) => {
                                 return (
-                                    <div className="cursor-pointer" key={index} onClick={() => ClickedValue(dataDash.BtnValue)}>
+                                    <div className="cursor-pointer font-semibold text-blue-500" key={index} onClick={() => ClickedValue(dataDash.BtnValue)}>
                                         {dataDash.name}
                                     </div>
                                 )
@@ -148,7 +148,7 @@ const DashHome = () => {
                                                     <tbody>
                                                         <tr className='h-14 bg-white text-[1F2B3C] border-b border-gray-200 text-gray-500'>
                                                             <td className='font-semibold text-center'>1</td>
-                                                            <td className='text-center font-semibold text-blue-500'>jehan@123,com</td>
+                                                            <td className='text-center font-semibold text-blue-500'>jehan@123.com</td>
                                                             <td className='text-center'>12:30 / 07/09/2024</td>
                                                             <td className='text-center'>Requesting for Voice Line</td>
                                                             <td>
