@@ -21,8 +21,8 @@ const Dashboard = () => {
     if(RoleUser !== null && EmailUser !== null){
         if(RoleUser === "SuperAdmin"){
             return (
-                <div className="min-h-screen bg-white w-full">
-                    <div className="bg-red-500 md:flex">
+                <div className="bg-gray-200 w-full min-h-screen">
+                    <div className="md:flex">
                         <div className="w-1/5">
                             <DashSide />
                         </div>
@@ -31,7 +31,6 @@ const Dashboard = () => {
                             <Outlet />
                         </div>
                     </div>
-                    <h1 className="font-semibold text-white">This Site is developed only for Educational Purpuses <p onClick={logout}>LogOut</p></h1>
                 </div>
             )
         }
