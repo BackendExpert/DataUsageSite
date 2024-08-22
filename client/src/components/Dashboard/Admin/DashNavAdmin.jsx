@@ -2,7 +2,9 @@ import React from 'react'
 
 const DashNavAdmin = () => {
   return (
-    <div>DashNavAdmin</div>
+    <div className='bg-white w-full mt-1'>
+      DashNavAdmin
+    </div>
   )
 }
 
