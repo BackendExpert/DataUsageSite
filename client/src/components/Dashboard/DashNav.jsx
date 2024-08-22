@@ -18,7 +18,7 @@ const DashNav = () => {
                         <a href={DashData.Link} className="">
                             <div className="bg-blue-600 md:py-8 md:px-8 py-2 rounded-xl mb-4">
                                 <div className="md:flex">
-                                    <center>{DashData.Icon}</center>
+                                    {/* {DashData.Icon} */}
                                     <p className="md:block hidden text-white text-xl font-semibold pl-2 pt-1">{DashData.name}</p>
                                 </div>
                             </div>
