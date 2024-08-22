@@ -27,23 +27,23 @@ const DashSide = () => {
       const SideMenu = [
         {id: 1, name: "Dashboard", link: '/Dashboard/Home', icon: <BsSpeedometer2 className='h-5 w-auto'/>},
         {id: 2, name: "Accounts", link: '', icon: <BsPeople className='h-5 w-auto'/>, submenu: [
-            {id: 1, name: "User Accounts ", link: '/Dashboard/AddProduct'},
-            {id: 2, name: "Admin Accounts ", link: '/Dashboard/ManageProducts'},
-            {id: 3, name: "New Admin Accounts ", link: '/Dashboard/ManageProducts'},
+            {id: 1, name: "User Accounts ", link: '/Dashboard/UserAccounts'},
+            {id: 2, name: "Admin Accounts ", link: '/Dashboard/Admin'},
+            {id: 3, name: "New Admin Accounts ", link: '/Dashboard/NewAdmin'},
         ]}, 
         {id: 3, name: "Packages", link: '', icon: <BsWifi className='h-5 w-auto'/>, submenu: [
-            {id: 1, name: "New Package ", link: '/Dashboard/AddProduct'},
-            {id: 2, name: "Mange Packages ", link: '/Dashboard/ManageProducts'},
+            {id: 1, name: "New Package ", link: '/Dashboard/AddPackage'},
+            {id: 2, name: "Mange Packages ", link: '/Dashboard/ManagePackages'},
         ]}, 
         {id: 4, name: "Other Packages", link: '', icon: <BsBoxes className='h-5 w-auto'/>, submenu: [
-            {id: 1, name: "PEO TV ", link: '/Dashboard/AddProduct'},
-            {id: 2, name: "Voice ", link: '/Dashboard/ManageProducts'},
+            {id: 1, name: "PEO TV ", link: '/Dashboard/peoTV'},
+            {id: 2, name: "Voice ", link: '/Dashboard/voice'},
         ]},
         {id: 5, name: "Promotions", link: '', icon: <BsMegaphone className='h-5 w-auto'/>, submenu: [
-            {id: 1, name: "New Promotions", link: '/Dashboard/AddProduct'},
-            {id: 2, name: "Manage Promotions", link: '/Dashboard/ManageProducts'},
+            {id: 1, name: "New Promotions", link: '/Dashboard/AddPromotion'},
+            {id: 2, name: "Manage Promotions", link: '/Dashboard/ManagePromotions'},
         ]},
-        {id: 6, name: "Profile ", link: '/Dashboard/User', icon: <BsPersonFill className='h-5 w-auto'/>}, 
+        {id: 6, name: "Profile ", link: '/Dashboard/Profile', icon: <BsPersonFill className='h-5 w-auto'/>}, 
         {id: 7, name: "Settings", link: '/Dashboard/Settings', icon: <BsGearFill className='h-5 w-auto'/>},    
       ]
 
