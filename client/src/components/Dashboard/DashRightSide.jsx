@@ -1,5 +1,5 @@
 import React from 'react'
-import { BsChatText, BsFileEarmarkPlusFill, BsFileText, BsGlobe, BsPhone } from 'react-icons/bs'
+import { BsChatText, BsFileEarmarkPlusFill, BsFileText, BsGlobe, BsPersonFillGear, BsPhone } from 'react-icons/bs'
 
 const DashRightSide = () => {
     const RightUpDash = [
@@ -8,7 +8,7 @@ const DashRightSide = () => {
         {name: "Hot Device", Icon: <BsPhone className='text-green-500 h-6 w-auto'/>, Link: ""},
         {name: "Bill", Icon: <BsFileText className='text-green-500 h-6 w-auto'/>, Link: ""},
         {name: "Complaints", Icon: <BsChatText className='text-green-500 h-6 w-auto'/>, Link: ""},
-        {name: "More", Icon: "", Link: ""},        
+        {name: "Profile", Icon: <BsPersonFillGear className='text-green-500 h-6 w-auto'/>, Link: ""},        
     ]
   return (
     <div>

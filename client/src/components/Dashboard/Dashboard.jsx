@@ -28,7 +28,9 @@ const Dashboard = () => {
                         </div>
                         <div className="md:w-full">
                             <DashNavAdmin />
-                            <Outlet />
+                            <div className="py-4 px-6">
+                                <Outlet />
+                            </div>
                         </div>
                     </div>
                 </div>
