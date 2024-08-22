@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import DashSummary from './DashSummary'
 import PackageInfo from './PackageInfo'
+import UsageData from './SummaryData/UsageData'
+import ExtraGBUse from './SummaryData/ExtraGBUse'
 
 const SummaryData = () => {
+    const [ClickedValue, SerClickedValue] = useState(0)
+
+    const DivClick = (BtnValue) => {
+        SerClickedValue(BtnValue)
+    }
+
     const SummarySideData = [
         {name: "My Package", BtnValue: 0, value: "96.4 used from 100.00 GB"},
         {name: "Extra GB", BtnValue: 1, value: "0.9 used from 15.0 GB"},        
@@ -21,7 +29,7 @@ const SummaryData = () => {
                 {
                     SummarySideData.map((data, index) => {
                         return (
-                            <div className="w-full bg-blue-600 p-4 rounded md:mr-1 mb-2 text-white cursor-pointer" key={index}>
+                            <div onClick={() => DivClick(data.BtnValue)} className="w-full bg-blue-600 p-4 rounded md:mr-1 mb-2 text-white cursor-pointer" key={index}>
                                 <p className="text-xl font-semibold text-center">{data.name}</p>
                                 <p className="text-center mt-2">{data.value}</p>
                             </div>  
@@ -30,7 +38,20 @@ const SummaryData = () => {
                 }
             </div>
             <div className="w-full bg-blue-600 p-4 rounded ml-1">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam cum aspernatur accusantium, hic enim numquam, sit repellat ab, nam consequuntur minus corrupti modi commodi quia qui aliquid earum repudiandae blanditiis?
+                {
+                    (() => {
+                        if(ClickedValue === 0){
+                            return (
+                                <UsageData />
+                            )
+                        }
+                        else if(ClickedValue === 1){
+                            return (
+                                <ExtraGBUse />
+                            )
+                        }
+                    })()
+                }
             </div>
         </div>
     </div>
