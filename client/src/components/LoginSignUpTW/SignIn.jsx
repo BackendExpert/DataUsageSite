@@ -68,12 +68,12 @@ const SignIn = () => {
                         <form onSubmit={headleSubmit} className='my-4'>
                             <div className="my-3 ">
                                 <label htmlFor="" className='text-white'>Email : </label>
-                                <input type="email" name="" id="" className="text-white w-full h-12 pl-2 rounded bg-blue-700/40" required placeholder='Enter Email Address'
+                                <input type="email" name=""  className="text-white w-full h-12 pl-2 rounded bg-blue-700/40" required placeholder='Enter Email Address'
                                 onChange={e => SetLoginData({...LoginData, email:e.target.value})}/>
                             </div>
                             <div className="my-3 ">
                                 <label htmlFor="" className='text-white'>Password : </label>
-                                <input type="password" name="" id="" className="text-white w-full h-12 pl-2 rounded bg-blue-700/40" required placeholder='Enter Password' 
+                                <input type="password" name=""  className="text-white w-full h-12 pl-2 rounded bg-blue-700/40" required placeholder='Enter Password' 
                                 onChange={e => SetLoginData({...LoginData, password:e.target.value})}/>
                             </div>
                             <div className="my-2 ">

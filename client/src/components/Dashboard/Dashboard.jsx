@@ -7,8 +7,8 @@ import DashRightSide from './DashRightSide';
 
 const Dashboard = () => {
     const navigate = useNavigate()
-    const RoleUser = secureLocalStorage.getItem("Login1");
-    const EmailUser = secureLocalStorage.getItem("Login2");
+    const EmailUser = secureLocalStorage.getItem("Login1");
+    const RoleUser = secureLocalStorage.getItem("Login2");
 
     const logout = () => {
         localStorage.clear()
@@ -17,20 +17,35 @@ const Dashboard = () => {
     }
 
     if(RoleUser !== null && EmailUser !== null){
-        return (
-            <div className="min-h-screen bg-[#0f3b7a] dashContainer w-full">
-                <div className="md:flex">
-                    <div className="md:w-3/4">
-                        <DashNav />
-                        <Outlet />
+        if(RoleUser === "SuperAdmin"){
+            return (
+                <div className="min-h-screen bg-white w-full">
+                    <div className="md:flex">
+                        <div className="md:w-3/4">
+                            <DashNav />
+                            <Outlet />
+                        </div>
                     </div>
-                    <div className="md:w-1/4 md:pl-2">
-                        <DashRightSide />
-                    </div>
+                    <h1 className="font-semibold text-white">This Site is developed only for Educational Purpuses <p onClick={logout}>LogOut</p></h1>
                 </div>
-                <h1 className="font-semibold text-white">This Site is developed only for Educational Purpuses</h1>
-            </div>
-        )
+            )
+        }
+        else if(RoleUser === "User"){
+            return (
+                <div className="min-h-screen bg-[#0f3b7a] dashContainer w-full">
+                    <div className="md:flex">
+                        <div className="md:w-3/4">
+                            <DashNav />
+                            <Outlet />
+                        </div>
+                        <div className="md:w-1/4 md:pl-2">
+                            <DashRightSide />
+                        </div>
+                    </div>
+                    <h1 className="font-semibold text-white">This Site is developed only for Educational Purpuses <p onClick={logout}>LogOut</p></h1>
+                </div>
+            )
+        }
     }
     else{
         useEffect(() => {
