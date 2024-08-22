@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import UsersImg from '../../../assets/Users.png'
 import UsersRequestImg from '../../../assets/UserRequest.png'
 import Income from '../../../assets/Income.png'
@@ -52,6 +52,18 @@ const DashHome = () => {
         bgColor: 'bg-[#1F2B3C]'
       },
     ]
+
+    const DashTableData = [
+        {id: 1, name: "User Requests", BtnValue: 0},
+        {id: 2, name: "User Accounts", BtnValue: 1},
+        {id: 3, name: "User Requests", BtnValue: 2},        
+    ]
+
+    const [ValueClicked, SetValueClicked] = useState(0)
+
+    const ClickedValue = () => {
+        SetValueClicked()
+    }
   return (
     <div>
         <h1 className="text-xl font-seimbold text-[#1F2B3C]">Dashboard</h1>
@@ -88,7 +100,7 @@ const DashHome = () => {
 
         <div className="">
             <div className="md:flex">
-                <div className="w-1/3 pb-2 my-4 mr-2">
+                <div className="md:w-1/3 md:pb-2 my-4 md:mr-2">
                     <div className="py-2 px-3 bg-white rounded shadow-md mb-2">
                         <BsCaretUpFill className='text-[#56AAB3] h-16 w-full'/>
 
@@ -102,8 +114,19 @@ const DashHome = () => {
                         ahsjkdhajksdhkj 
                     </div>
                 </div>
-                <div className="w-full bg-white rounded shadow-md py-2 px-4 my-4 ml-2">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Error impedit labore assumenda. Debitis enim, excepturi reprehenderit porro veniam, nulla dolore nihil earum dolor, asperiores adipisci corrupti minima consequuntur numquam laudantium.
+                <div className="w-full bg-white rounded shadow-md py-2 px-4 my-4 md:ml-2">
+                    <div className="flex justify-between mx-2 my-2">
+                        {
+                            DashTableData.map((dataDash, index) => {
+                                return (
+                                    <div className="cursor-pointer" key={index}>
+                                        {dataDash.name}
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
+                    <hr />
                 </div>
             </div>
         </div>
