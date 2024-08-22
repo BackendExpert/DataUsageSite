@@ -61,8 +61,8 @@ const DashHome = () => {
 
     const [ValueClicked, SetValueClicked] = useState(0)
 
-    const ClickedValue = () => {
-        SetValueClicked()
+    const ClickedValue = (Value) => {
+        SetValueClicked(Value)
     }
   return (
     <div>
@@ -119,7 +119,7 @@ const DashHome = () => {
                         {
                             DashTableData.map((dataDash, index) => {
                                 return (
-                                    <div className="cursor-pointer" key={index}>
+                                    <div className="cursor-pointer" key={index} onClick={() => ClickedValue(dataDash.BtnValue)}>
                                         {dataDash.name}
                                     </div>
                                 )
@@ -127,6 +127,44 @@ const DashHome = () => {
                         }
                     </div>
                     <hr />
+
+                    <div className="">
+                        {
+                            (() => {
+                                if(ValueClicked === 0){
+                                    return (
+                                        <div className="">
+                                            <div className="rounded-lg border my-4">
+                                                <table className='w-full'>
+                                                    <thead className="">
+                                                        <tr className='h-8 bg-[#56AAB3] text-white'>
+                                                            <th>#</th>
+                                                            <th>Request From</th>
+                                                            <th>Request At</th>
+                                                            <th>Request For</th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr className='h-14 bg-white text-[1F2B3C] border-b border-gray-200 text-gray-500'>
+                                                            <td className='font-semibold text-center'>1</td>
+                                                            <td className='text-center font-semibold text-blue-500'>jehan@123,com</td>
+                                                            <td className='text-center'>12:30 / 07/09/2024</td>
+                                                            <td className='text-center'>Requesting for Voice Line</td>
+                                                            <td>
+                                                                <p className="text-blue-600 font-semibold">check</p>
+                                                            </td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    )
+                                }
+                            })()
+                        }
+                    </div>
                 </div>
             </div>
         </div>
