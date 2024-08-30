@@ -12,6 +12,7 @@ import DataAddons from "./components/Dashboard/DataAddons";
 import DashHome from "./components/Dashboard/Admin/DashHome";
 import UserAccounts from "./components/Accounts/UserAccounts";
 import NewAccount from "./components/Accounts/NewAccount";
+import AccountData from "./components/Accounts/AccountData";
 
 
 export default function App() {
@@ -30,6 +31,7 @@ export default function App() {
           <Route path="PeoTv" element={<PrivateRoute ProtectRoute={<PeoTv /> } /> } />
           <Route path="UserAccounts" element={<PrivateRoute ProtectRoute={<UserAccounts /> } /> } />
           <Route path="NewAccount" element={<PrivateRoute ProtectRoute={<NewAccount /> } /> } />
+          <Route path="AccountData/:id" element={<PrivateRoute ProtectRoute={<AccountData /> } /> } />
         </Route>
       </Routes> 
     </BrowserRouter>
