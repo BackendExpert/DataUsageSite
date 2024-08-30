@@ -6,7 +6,7 @@ const UserAccounts = () => {
         <h1 className="text-xl font-seimbold text-[#1F2B3C]">User Accounts</h1>
 
         <div className="my-2">
-            <a href="">
+            <a href="NewAccount">
                 <button className='bg-blue-500 text-white rounded py-2 px-4'>
                     Add New Account
                 </button>

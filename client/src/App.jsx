@@ -11,6 +11,7 @@ import ExtraGB from "./components/Dashboard/ExtraGB";
 import DataAddons from "./components/Dashboard/DataAddons";
 import DashHome from "./components/Dashboard/Admin/DashHome";
 import UserAccounts from "./components/Accounts/UserAccounts";
+import NewAccount from "./components/Accounts/NewAccount";
 
 
 export default function App() {
@@ -28,6 +29,7 @@ export default function App() {
           <Route path="DailyUse" element={<PrivateRoute ProtectRoute={<DailyUse /> } /> } />
           <Route path="PeoTv" element={<PrivateRoute ProtectRoute={<PeoTv /> } /> } />
           <Route path="UserAccounts" element={<PrivateRoute ProtectRoute={<UserAccounts /> } /> } />
+          <Route path="NewAccount" element={<PrivateRoute ProtectRoute={<NewAccount /> } /> } />
         </Route>
       </Routes> 
     </BrowserRouter>
