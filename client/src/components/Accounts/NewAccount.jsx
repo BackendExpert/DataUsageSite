@@ -22,6 +22,12 @@ const NewAccount = () => {
   return (
     <div>
         <h1 className="text-gray-500 font-semibold">NewAccount</h1>
+
+        <div className="mt-4">
+            <form onSubmit={headleSubmit} method="post">
+                
+            </form>
+        </div>
     </div>
   )
 }
