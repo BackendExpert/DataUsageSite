@@ -30,7 +30,7 @@ const DashSide = () => {
             {id: 1, name: "User Accounts ", link: '/Dashboard/UserAccounts'},
         ]}, 
         {id: 3, name: "Packages", link: '', icon: <BsWifi className='h-5 w-auto'/>, submenu: [
-            {id: 1, name: "New Package ", link: '/Dashboard/AddPackage'},
+            {id: 1, name: "New Package ", link: '/Dashboard/NewPackage'},
             {id: 2, name: "Mange Packages ", link: '/Dashboard/ManagePackages'},
         ]}, 
         {id: 4, name: "Other Packages", link: '', icon: <BsBoxes className='h-5 w-auto'/>, submenu: [

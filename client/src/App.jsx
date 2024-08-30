@@ -13,6 +13,7 @@ import DashHome from "./components/Dashboard/Admin/DashHome";
 import UserAccounts from "./components/Accounts/UserAccounts";
 import NewAccount from "./components/Accounts/NewAccount";
 import AccountData from "./components/Accounts/AccountData";
+import AddPackage from "./components/Packages/AddPackage";
 
 
 export default function App() {
@@ -32,6 +33,7 @@ export default function App() {
           <Route path="UserAccounts" element={<PrivateRoute ProtectRoute={<UserAccounts /> } /> } />
           <Route path="NewAccount" element={<PrivateRoute ProtectRoute={<NewAccount /> } /> } />
           <Route path="AccountData/:id" element={<PrivateRoute ProtectRoute={<AccountData /> } /> } />
+          <Route path="NewPackage" element={<PrivateRoute ProtectRoute={<AddPackage /> } /> } />
         </Route>
       </Routes> 
     </BrowserRouter>
