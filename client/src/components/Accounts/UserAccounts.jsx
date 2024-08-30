@@ -5,6 +5,14 @@ const UserAccounts = () => {
     <div>
         <h1 className="text-xl font-seimbold text-[#1F2B3C]">User Accounts</h1>
 
+        <div className="my-2">
+            <a href="">
+                <button className='bg-blue-500 text-white rounded py-2 px-4'>
+                    Add New Account
+                </button>
+            </a>
+        </div>
+
         <div className="my-4 ">
             <table className='bg-white rounded-t-md  border-tools-table-outline border-black border-1 w-full'>
                 <thead className='h-12 border-b text-left bg-gray-100'>
