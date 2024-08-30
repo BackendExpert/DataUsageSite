@@ -28,8 +28,6 @@ const DashSide = () => {
         {id: 1, name: "Dashboard", link: '/Dashboard/Home', icon: <BsSpeedometer2 className='h-5 w-auto'/>},
         {id: 2, name: "Accounts", link: '', icon: <BsPeople className='h-5 w-auto'/>, submenu: [
             {id: 1, name: "User Accounts ", link: '/Dashboard/UserAccounts'},
-            {id: 2, name: "Admin Accounts ", link: '/Dashboard/Admin'},
-            {id: 3, name: "New Admin Accounts ", link: '/Dashboard/NewAdmin'},
         ]}, 
         {id: 3, name: "Packages", link: '', icon: <BsWifi className='h-5 w-auto'/>, submenu: [
             {id: 1, name: "New Package ", link: '/Dashboard/AddPackage'},
