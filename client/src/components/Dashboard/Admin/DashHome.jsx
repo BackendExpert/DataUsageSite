@@ -138,21 +138,27 @@ const DashHome = () => {
                                                 <table className='w-full'>
                                                     <thead className="">
                                                         <tr className='h-8 bg-[#56AAB3] text-white'>
-                                                            <th>#</th>
-                                                            <th>Request From</th>
-                                                            <th>Request At</th>
-                                                            <th>Request For</th>
+                                                            <th className='md:table-cell hidden'>Request From</th>
+                                                            <th className='md:table-cell hidden'>Request At</th>
+                                                            <th className='md:table-cell hidden'>Request For</th>
+                                                            <th className='md:hidden table-cell'>Request Data</th>
                                                             <th></th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr className='h-14 bg-white text-[1F2B3C] border-b border-gray-200 text-gray-500'>
-                                                            <td className='font-semibold text-center'>1</td>
-                                                            <td className='text-center font-semibold text-blue-500'>jehan@123.com</td>
-                                                            <td className='text-center'>12:30 / 07/09/2024</td>
-                                                            <td className='text-center'>Requesting for Voice Line</td>
+                                                            <td className='md:table-cell hidden pl-4 font-semibold text-blue-500'>jehan@123.com</td>
+                                                            <td className='md:table-cell hidden pl-4'>12:30 / 07/09/2024</td>
+                                                            <td className='md:table-cell hidden pl-4'>Requesting for Voice Line</td>
+                                                            <td className='md:hidden table-cell pl-4'>
+                                                                <div className="my-2">
+                                                                    <p className=''>Email: jehan@123.com</p>
+                                                                    <p className="">At: <span className='text-red-500'>12:30 / 07/09/2024</span></p>
+                                                                    <p className="">For: Requesting for Voice Line</p>
+                                                                </div>
+                                                            </td>
                                                             <td>
-                                                                <p className="text-blue-600 font-semibold">check</p>
+                                                                <a href='' className="underline text-blue-600 font-semibold">Check</a>
                                                             </td>
                                                         </tr>
 
