@@ -12,7 +12,7 @@ const NewAccount = () => {
         e.preventDefault();
 
         try{
-            
+
         }
         catch (err) {
             console.log(err)
@@ -20,7 +20,9 @@ const NewAccount = () => {
 
     }
   return (
-    <div>NewAccount</div>
+    <div>
+        <h1 className="text-gray-500 font-semibold">NewAccount</h1>
+    </div>
   )
 }
 
