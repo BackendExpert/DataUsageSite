@@ -45,11 +45,10 @@ const ManagePackages = () => {
             <table className='bg-white rounded-t-md  border-tools-table-outline border-black border-1 w-full'>
                 <thead className='h-12 border-b text-left bg-gray-100'>
                     <tr className='text-gray-500'>
-                        <th className='md:table-cell hidden pl-4 font-semibold rounded-tl-sm'>Email</th>
-                        <th className='md:table-cell hidden pl-4'>Account</th>
+                        <th className='md:table-cell hidden pl-4 font-semibold rounded-tl-sm'>Package Name</th>
+                        <th className='md:table-cell hidden pl-4'>Package Use</th>
                         <th className='md:table-cell hidden pl-4'>Status</th>
-                        <th className='md:table-cell hidden pl-4'>User Type</th>
-                        <th className='table-cell md:hidden pl-4'>Account Info</th>
+                        <th className='table-cell md:hidden pl-4'>Package Info</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -58,10 +57,9 @@ const ManagePackages = () => {
                         filteredData.map((item, index) => {
                             return (
                                 <tr className='h-10 text-sm border-b border-gray-200' key={index}>
-                                    <td className='md:table-cell hidden pl-4 font-semibold rounded-tl-sm'>{item.email}</td>
-                                    <td className='md:table-cell hidden pl-4'>{item.AccNo}</td>
+                                    <td className='md:table-cell hidden pl-4 font-semibold rounded-tl-sm'>{item.name}</td>
+                                    <td className='md:table-cell hidden pl-4'>{item.packageUse}</td>
                                     <td className='md:table-cell hidden pl-4 font-bold text-green-500'>{item.Status}</td>
-                                    <td className='md:table-cell hidden pl-4 font-bold text-blue-500'>{item.UserType}</td>
                                     <td className='table-cell md:hidden pl-4'>
                                         <div className="my-2">
                                             <p className="">Email : 123@123.com</p>
@@ -71,7 +69,7 @@ const ManagePackages = () => {
                                         </div>
                                     </td>
                                     <td>
-                                        <a href={'AccountData/' + item.email } className='text-blue-500 underline font-bold'>
+                                        <a href={'PackageView/' + item.name } className='text-blue-500 underline font-bold'>
                                             View
                                         </a>
                                     </td>
