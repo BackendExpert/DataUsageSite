@@ -66,11 +66,11 @@ const AddPackage = () => {
                     </div>
                     <div className="md:grid grid-cols-2 gap-4 my-4">
                         <div className="">
-                            <input type="text" name="" id="" className="w-full h-10 bg-gray-200 rounded pl-2 md:my-0 my-2" required placeholder='Package Price'
+                            <input type="number" name="" id="" className="w-full h-10 bg-gray-200 rounded pl-2 md:my-0 my-2" required placeholder='Package Price'
                             onChange={e => SetPackageData({...PackageData, packagePrice:e.target.value})}/>
                         </div>
                         <div className="">
-                            <input type="number" name="" id="" className="w-full h-10 bg-gray-200 rounded pl-2 md:my-0 my-2" required placeholder='Package For'
+                            <input type="text" name="" id="" className="w-full h-10 bg-gray-200 rounded pl-2 md:my-0 my-2" required placeholder='Package For'
                             onChange={e => SetPackageData({...PackageData, packageFor:e.target.value})}/>
                         </div>
                     </div>
