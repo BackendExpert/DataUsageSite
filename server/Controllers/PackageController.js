@@ -36,6 +36,16 @@ const PackageController = {
     catch(err) {
         console.log(err)
     }
+  },
+
+  AllPackages: async(res, req) => {
+    try{
+        const ViewPackages = await Package.find()
+        res.json({ Result: ViewPackages })
+    }
+    catch(err){
+        console.log(err)
+    }
   }
 };
 
