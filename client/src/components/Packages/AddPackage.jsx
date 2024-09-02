@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
+import axios from 'axios'
+import { Link, useNavigate } from 'react-router-dom';
 
 const AddPackage = () => {
+    const navigate = useNavigate()
+
     const [PackageData, SetPackageData] = useState({
         packageName: '',
         packageDesc: '',
@@ -11,8 +15,22 @@ const AddPackage = () => {
         packageFor: ''
     })
 
-    const headleCreatePackage = (e) => {
+    const headleCreatePackage = async (e) => {
         e.preventDefault();
+
+        // console.log(import.meta.env.VITE_APP_API)
+
+        const res = await axios.post(import.meta.env.VITE_APP_API + '/package/CreatePackage', PackageData)
+        .then(res => {
+            if(res.data.Status === "Success"){
+                alert("Package Created Successfully")
+                window.location.reload()
+            }
+            else{
+                alert(res.data.Error)
+            }
+        })
+
 
 
     }
