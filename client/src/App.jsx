@@ -16,6 +16,7 @@ import AccountData from "./components/Accounts/AccountData";
 import AddPackage from "./components/Packages/AddPackage";
 import ManagePackages from "./components/Packages/ManagePackages";
 import PackageView from "./components/Packages/PackageView";
+import PackageUsage from "./components/Packages/PackageUsage";
 
 
 
@@ -39,7 +40,7 @@ export default function App() {
           <Route path="NewPackage" element={<PrivateRoute ProtectRoute={<AddPackage /> } /> } />
           <Route path="ManagePackages" element={<PrivateRoute ProtectRoute={<ManagePackages /> } /> } />
           <Route path="PackageView/:id" element={<PrivateRoute ProtectRoute={<PackageView /> } /> } />
-          <Route path="PackageUsage" element={<PrivateRoute ProtectRoute={<PackageUpgrade /> } /> } />
+          <Route path="PackageUsage" element={<PrivateRoute ProtectRoute={<PackageUsage /> } /> } />
         </Route>
       </Routes> 
     </BrowserRouter>
