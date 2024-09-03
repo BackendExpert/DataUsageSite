@@ -19,6 +19,11 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    Status: {
+        type: String,
+        required: true,
+        default: 'Deactive'
+    },
     createdAt: {
         type: Date,
         default: Date.now
