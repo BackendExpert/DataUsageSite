@@ -46,6 +46,18 @@ const PackageController = {
     catch(err){
         console.log(err)
     }
+  },
+
+
+  OnePackage: async(req, res) => {
+    try{
+        const PackageID = req.params.id
+        const PackageData = await Package.find({_id: PackageID })
+        return res.json({ Result: PackageData })
+    }
+    catch(err){
+        console.log(err)
+    }
   }
 };
 
