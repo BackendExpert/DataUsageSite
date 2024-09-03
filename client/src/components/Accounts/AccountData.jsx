@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 const AccountData = () => {
     const {id} = useParams()
+    const [AccData, SetAccData] = useState([])
+
+    useEffect(() => {
+        const res = axios.get(import.meta.env.VITE_APP_API + '/userAcc/ViewOneAccount')
+        .then(res => SetAccData(res.data.Result))
+        .catch(err => console.log(err))
+    }, [])
+    
   return (
     <div>
         <h1 className="text-xl font-semibold text-gray-500">AccountData : {id} </h1>
