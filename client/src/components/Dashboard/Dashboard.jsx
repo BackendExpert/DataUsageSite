@@ -23,10 +23,10 @@ const Dashboard = () => {
             return (
                 <div className="bg-gray-200 w-full min-h-screen">
                     <div className="md:flex">
-                        <div className="w-1/5">
+                        <div className="w-1/5 fixed">
                             <DashSide />
                         </div>
-                        <div className="md:w-full">
+                        <div className="md:w-full ml-[270px]">
                             <DashNavAdmin />
                             <div className="py-4 px-6">
                                 <Outlet />
