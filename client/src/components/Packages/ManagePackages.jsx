@@ -4,23 +4,30 @@ import axios from 'axios'
 const ManagePackages = () => {
 
     const [PackageData, SetPackageData] = useState([])
+    const [filteredData, setFilteredData] = useState([]);
 
     useEffect(() => {
-        const res = axios.get(import)
+        const res = axios.get(import.meta.env.VITE_APP_API + '/package/AllPackages')
+        .then(res => {
+            SetPackageData(res.data.Result)
+            setFilteredData(res.data.Result)
+        })
+        .catch(err => console.log(err))
     }, [])
-    const data = [
-        {name: "web Starter", packageUse: '5693', Status: "Active"},
-        {name: "web Starter", packageUse: '5693', Status: "Active"},
-        {name: "web Starter", packageUse: '5693', Status: "Active"},
-        {name: "web Starter", packageUse: '5693', Status: "Active"},
-        {name: "web Starter", packageUse: '5693', Status: "Active"},
-        {name: "web Starter", packageUse: '5693', Status: "Active"},
-        {name: "web Starter", packageUse: '5693', Status: "Active"},
-        {name: "web Starter", packageUse: '5693', Status: "Active"},
-    ]
+
+    // const data = [
+    //     {name: "web Starter", packageUse: '5693', Status: "Active"},
+    //     {name: "web Starter", packageUse: '5693', Status: "Active"},
+    //     {name: "web Starter", packageUse: '5693', Status: "Active"},
+    //     {name: "web Starter", packageUse: '5693', Status: "Active"},
+    //     {name: "web Starter", packageUse: '5693', Status: "Active"},
+    //     {name: "web Starter", packageUse: '5693', Status: "Active"},
+    //     {name: "web Starter", packageUse: '5693', Status: "Active"},
+    //     {name: "web Starter", packageUse: '5693', Status: "Active"},
+    // ]
 
     const [searchTerm, setSearchTerm] = useState('');
-    const [filteredData, setFilteredData] = useState(data);
+
 
     const handleSearch = (e) => {
         const value = e.target.value;
@@ -28,12 +35,12 @@ const ManagePackages = () => {
     
         if (value.length >= 3) {
           setFilteredData(
-            data.filter((item) =>
-              item.name.startsWith(value)
+            PackageData.filter((item) =>
+              item.PackageName.startsWith(value)
             )
           );
         } else {
-          setFilteredData(data);
+          setFilteredData(PackageData);
         }
     };
 
@@ -53,8 +60,8 @@ const ManagePackages = () => {
                 <thead className='h-12 border-b text-left bg-gray-100'>
                     <tr className='text-gray-500'>
                         <th className='md:table-cell hidden pl-4 font-semibold rounded-tl-sm'>Package Name</th>
-                        <th className='md:table-cell hidden pl-4'>Package Use</th>
-                        <th className='md:table-cell hidden pl-4'>Status</th>
+                        <th className='md:table-cell hidden pl-4'>Package</th>
+                        <th className='md:table-cell hidden pl-4'>Data</th>
                         <th className='table-cell md:hidden pl-4'>Package Info</th>
                         <th>Action</th>
                     </tr>
@@ -64,9 +71,9 @@ const ManagePackages = () => {
                         filteredData.map((item, index) => {
                             return (
                                 <tr className='h-10 text-sm border-b border-gray-200' key={index}>
-                                    <td className='md:table-cell hidden pl-4 font-semibold rounded-tl-sm'>{item.name}</td>
-                                    <td className='md:table-cell hidden pl-4'>{item.packageUse}</td>
-                                    <td className='md:table-cell hidden pl-4 font-bold text-green-500'>{item.Status}</td>
+                                    <td className='md:table-cell hidden pl-4 font-semibold rounded-tl-sm'>{item.PackageName}</td>
+                                    <td className='md:table-cell hidden pl-4'>{item.pkDesc}</td>
+                                    <td className='md:table-cell hidden pl-4'>{item.pkData} GB</td>
                                     <td className='table-cell md:hidden pl-4'>
                                         <div className="my-2">
                                             <p className="">Email : 123@123.com</p>
@@ -76,7 +83,7 @@ const ManagePackages = () => {
                                         </div>
                                     </td>
                                     <td>
-                                        <a href={'PackageView/' + item.name } className='text-blue-500 underline font-bold'>
+                                        <a href={'PackageView/' + item._id } className='text-blue-500 underline font-bold'>
                                             View
                                         </a>
                                     </td>

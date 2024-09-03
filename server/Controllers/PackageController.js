@@ -38,10 +38,10 @@ const PackageController = {
     }
   },
 
-  AllPackages: async(res, req) => {
+  AllPackages: async(req, res) => {
     try{
         const ViewPackages = await Package.find()
-        res.json({ Result: ViewPackages })
+        return res.json({ Result: ViewPackages })
     }
     catch(err){
         console.log(err)
