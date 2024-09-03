@@ -34,8 +34,9 @@ const SignIn = () => {
                 // login user Email 
                 secureLocalStorage.setItem('Login1', res.data.Result.email)
                 secureLocalStorage.setItem('Login2', res.data.Result.Role)      
+                const CheckActive = res.data.Result.Status
 
-                if(res.data.Result.Role === "User"){
+                if(res.data.Result.Role === "User" && CheckActive === "Active"){
                     navigate('/Dashboard/Summary')  
                 }
                 if(res.data.Result.Role === "SuperAdmin"){
