@@ -3,24 +3,28 @@ import React, { useEffect, useState } from 'react'
 
 const UserAccounts = () => {
     const [AccountData, SetAccountData] = useState([])
+    const [filteredData, setFilteredData] = useState([]);
 
     useEffect(() => {
-        const res = axios.get(import.meta.env.VITE_APP_API + '/userAcc/ViewAllAccountes')
-        .then(res => SetAccountData(res.data.Result))
+        const res = axios.get(import.meta.env.VITE_APP_API + '/userAcc/ViewAllAccounts')
+        .then(res => {
+            SetAccountData(res.data.Result)
+            setFilteredData(res.data.Result)
+        })
         .catch(err => console.log(err))
     }, [])
 
     const [searchTerm, setSearchTerm] = useState('');
-    const [filteredData, setFilteredData] = useState(AccountData);
+
 
     const handleSearch = (e) => {
         const value = e.target.value;
-        setSearchTerm(AccountData);
+        setSearchTerm(value);
     
         if (AccountData.length >= 3) {
           setFilteredData(
             AccountData.filter((item) =>
-              item.AccNo.startsWith(AccountData)
+              item.email.startsWith(AccountData)
             )
           );
         } else {
@@ -66,14 +70,74 @@ const UserAccounts = () => {
                                 <tr className='h-10 text-sm border-b border-gray-200' key={index}>
                                     <td className='md:table-cell hidden pl-4 font-semibold rounded-tl-sm'>{item.email}</td>
                                     <td className='md:table-cell hidden pl-4'>{item.AccNo}</td>
-                                    <td className='md:table-cell hidden pl-4 font-bold text-green-500'>{item.Status}</td>
-                                    <td className='md:table-cell hidden pl-4 font-bold text-blue-500'>{item.UserType}</td>
+                                    <td className='md:table-cell hidden pl-4'>
+                                        {
+                                            (() => {
+                                                if(item.Status === "Active"){
+                                                    return(
+                                                        <p className="text-green-500 font-bold">Active</p>
+                                                    )
+                                                }
+                                                else{
+                                                    return(
+                                                        <p className="text-red-500 font-bold">Deactive</p>
+                                                    )
+                                                }
+                                            })()
+                                        }
+                                    </td>
+                                    <td className='md:table-cell hidden pl-4 font-bold text-blue-500'>
+                                        {
+                                            (() => {
+                                                if(item.Role === "SuperAdmin"){
+                                                    return(
+                                                        <p className="text-red-500 font-bold">SuperAdmin</p>
+                                                    )
+                                                }
+                                                else if(item.Role === "User"){
+                                                    return(
+                                                        <p className="text-blue-500 font-bold">User</p>
+                                                    )
+                                                }
+                                            })()
+                                        }
+                                    </td>
                                     <td className='table-cell md:hidden pl-4'>
                                         <div className="my-2">
-                                            <p className="">Email : 123@123.com</p>
-                                            <p className="">Account : 0812377305</p>
-                                            <p className="">Status : <span className="text-green-500 font-bold">Active</span></p>
-                                            <p className="">Status : <span className="text-blue-500 font-bold">User</span></p>
+                                            <p className="">Email : {item.email}</p>
+                                            <p className="">Account : {item.AccNo}</p>
+                                            <p className="">Status : 
+                                            {
+                                                (() => {
+                                                    if(item.Status === "Active"){
+                                                        return(
+                                                            <p className="text-green-500 font-bold">Active</p>
+                                                        )
+                                                    }
+                                                    else{
+                                                        return(
+                                                            <p className="text-red-500 font-bold">Deactive</p>
+                                                        )
+                                                    }
+                                                })()
+                                            }
+                                            </p>
+                                            <p className="">Role : 
+                                            {
+                                                (() => {
+                                                    if(item.Role === "SuperAdmin"){
+                                                        return(
+                                                            <p className="text-red-500 font-bold">SuperAdmin</p>
+                                                        )
+                                                    }
+                                                    else if(item.Role === "User"){
+                                                        return(
+                                                            <p className="text-blue-500 font-bold">User</p>
+                                                        )
+                                                    }
+                                                })()
+                                            }
+                                        </p>
                                         </div>
                                     </td>
                                     <td>
