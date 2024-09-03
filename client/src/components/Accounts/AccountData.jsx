@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
@@ -6,11 +7,11 @@ const AccountData = () => {
     const [AccData, SetAccData] = useState([])
 
     useEffect(() => {
-        const res = axios.get(import.meta.env.VITE_APP_API + '/userAcc/ViewOneAccount')
+        const res = axios.get(import.meta.env.VITE_APP_API + `/userAcc/ViewOneAccount/${id}`)
         .then(res => SetAccData(res.data.Result))
         .catch(err => console.log(err))
     }, [])
-    
+
   return (
     <div>
         <h1 className="text-xl font-semibold text-gray-500">AccountData : {id} </h1>

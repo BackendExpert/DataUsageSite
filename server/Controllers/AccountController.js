@@ -9,6 +9,18 @@ const AccountController = {
         catch(err) {
             console.log(err)
         }
+    },
+
+    ViewOneAccout: async(req, res) => {
+        try{
+            const AccID = req.params.id
+
+            const DataAcc = await User.findById(AccID)
+            return res.json({ Result: DataAcc })
+        }
+        catch(err){
+            console.log(err)
+        }
     }
 };
 
