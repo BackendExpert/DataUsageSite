@@ -70,6 +70,10 @@ const PackageView = () => {
             }
             
           </tr>
+          <tr className='h-10 border-b border-gray-200'>
+            <td className='w-1/4 font-semibold'>Package Description</td>
+            <td className='text-gray-500 border-l border-gray-200 pl-4'>{packageOneData.pkDesc}</td>
+          </tr>
         </table>
       </div>
     </div>
