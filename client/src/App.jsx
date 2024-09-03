@@ -17,6 +17,7 @@ import AddPackage from "./components/Packages/AddPackage";
 import ManagePackages from "./components/Packages/ManagePackages";
 import PackageView from "./components/Packages/PackageView";
 import PackageUsage from "./components/Packages/PackageUsage";
+import RouteAssign from "./components/Accounts/RouteAssign";
 
 
 
@@ -41,6 +42,7 @@ export default function App() {
           <Route path="ManagePackages" element={<PrivateRoute ProtectRoute={<ManagePackages /> } /> } />
           <Route path="PackageView/:id" element={<PrivateRoute ProtectRoute={<PackageView /> } /> } />
           <Route path="PackageUsage" element={<PrivateRoute ProtectRoute={<PackageUsage /> } /> } />
+          <Route path="RouteAssign" element={<PrivateRoute ProtectRoute={<RouteAssign /> } /> } />
         </Route>
       </Routes> 
     </BrowserRouter>
