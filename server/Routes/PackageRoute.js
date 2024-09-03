@@ -6,5 +6,6 @@ const router = express.Router();
 router.post('/CreatePackage', PackageController.CreatePackage)
 router.get('/AllPackages', PackageController.AllPackages)
 router.get('/ViewOnPackge/:id', PackageController.OnePackage)
+router.get('/UpdatePackage/:id')
 
 module.exports = router;

@@ -59,6 +59,19 @@ const PackageController = {
     catch(err){
         console.log(err)
     }
+  },
+
+  UpdatePackage: async (req, res) => {
+    try{
+        const PackageID = req.params.id
+        const PackageData = req.body
+
+        const PackageUpdate = await Package.findByIdAndUpdate(PackageID, { $set: PackageData }, { new: true })
+        return res.json({ Status: "Success" })
+    }
+    catch(err){
+        console.log(err)
+    }
   }
 };
 
