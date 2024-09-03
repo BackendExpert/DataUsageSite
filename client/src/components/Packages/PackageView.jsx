@@ -34,7 +34,16 @@ const PackageView = () => {
       try{
         // console.log(UpdatePackage)
 
-        const res = await axios.post(import.meta.env.VITE_APP_API + `/package/UpdatePackage/${id}`,  UpdatePackage)
+        const updatedData = {};
+        for (let key in UpdatePackage) {
+          if (UpdatePackage[key]) {
+            updatedData[key] = UpdatePackage[key];
+          }
+        }
+
+        // console.log(updatedData)
+
+        const res = await axios.post(import.meta.env.VITE_APP_API + `/package/UpdatePackage/${id}`,  updatedData)
         .then(res => {
           if(res.data.Status === "Success"){
             alert("Package Updated Successful")
@@ -44,6 +53,8 @@ const PackageView = () => {
             alert(res.data.Error)
           }
         })
+
+
       }
       catch(err) {
         console.log(err)
