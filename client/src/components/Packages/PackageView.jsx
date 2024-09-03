@@ -150,7 +150,7 @@ const PackageView = () => {
                     <tr className='h-10 border-b border-gray-200'>
                       <td className='w-1/4 font-semibold'>Package Data</td>
                       <td className='text-gray-500 border-l border-gray-200 pl-4'>
-                        <input type="text" name="" id="" className="w-full h-10 my-1 rounded bg-gray-200 pl-2" placeholder='Package Data'/>
+                        <input type="number" name="" id="" className="w-full h-10 my-1 rounded bg-gray-200 pl-2" placeholder='Package Data'/>
                       </td>
                     </tr>
 
@@ -167,8 +167,8 @@ const PackageView = () => {
                               <td className='w-1/4 font-semibold'>Package Data Structure</td>
                               <td className='text-gray-500 border-l border-gray-200 pl-4'>
                                 <div className="flex justify-between">
-                                  <input type="text" name="" id="" className="mr-1 w-full h-10 my-1 rounded bg-gray-200 pl-2" placeholder='Package Free Data'/>
-                                  <input type="text" name="" id="" className="ml-1 w-full h-10 my-1 rounded bg-gray-200 pl-2" placeholder='Package Standed Data'/>
+                                  <input type="number" name="" id="" className="mr-1 w-full h-10 my-1 rounded bg-gray-200 pl-2" placeholder='Package Free Data'/>
+                                  <input type="number" name="" id="" className="ml-1 w-full h-10 my-1 rounded bg-gray-200 pl-2" placeholder='Package Standed Data'/>
                                 </div>
                               </td>
                             </tr>
@@ -177,9 +177,16 @@ const PackageView = () => {
                       })()
                     }
 
-
-
+                    <tr className='h-10 border-b border-gray-200'>
+                      <td className='w-1/4 font-semibold'>Package Price</td>
+                      <td className='text-gray-500 border-l border-gray-200 pl-4'>
+                        <input type="number" name="" id="" className="w-full h-10 my-1 rounded bg-gray-200 pl-2" placeholder='Package Data'/>
+                      </td>
+                    </tr>
                   </table>
+
+
+                  <input type="submit" value="Update Package" className='bg-blue-500 text-white rounded py-2 px-4 mt-2'/>
 
                   </form>
                 </div>
