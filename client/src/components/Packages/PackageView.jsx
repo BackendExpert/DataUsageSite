@@ -132,7 +132,34 @@ const PackageView = () => {
                 </div>
 
                 <div className="mt-4">
-                  <form action="" onSubmit={headlePackageUpdate}></form>
+                  <form action="" onSubmit={headlePackageUpdate}>
+
+                  <table className='w-full mt-4'>
+                    <tr className='h-10 border-b border-gray-200'>
+                      <td className='w-1/4 font-semibold'>Package Description</td>
+                      <td className='text-gray-500 border-l border-gray-200 pl-4'>
+                        <input type="text" name="" id="" className="w-full h-10 my-1 rounded bg-gray-200 pl-2" placeholder='Package Description'/>
+                      </td>
+                    </tr>
+
+                    <tr className='h-10 border-b border-gray-200'>
+                      <td className='w-1/4 font-semibold'>Package Data</td>
+                      <td className='text-gray-500 border-l border-gray-200 pl-4'>
+                        <input type="text" name="" id="" className="w-full h-10 my-1 rounded bg-gray-200 pl-2" placeholder='Package Data'/>
+                      </td>
+                    </tr>
+
+                    <tr className='h-10 border-b border-gray-200'>
+                      <td className='w-1/4 font-semibold'>Package Data</td>
+                      <td className='text-gray-500 border-l border-gray-200 pl-4'>
+                        <input type="text" name="" id="" className="w-full h-10 my-1 rounded bg-gray-200 pl-2" placeholder='Package Data'/>
+                      </td>
+                    </tr>
+
+
+                  </table>
+
+                  </form>
                 </div>
               </div>
             )
