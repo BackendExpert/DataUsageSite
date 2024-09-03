@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
+import axios from 'axios'
+import { Link, useNavigate } from 'react-router-dom';
 
 const AddPackage = () => {
+    const navigate = useNavigate()
+
     const [PackageData, SetPackageData] = useState({
         packageName: '',
         packageDesc: '',
@@ -11,8 +15,22 @@ const AddPackage = () => {
         packageFor: ''
     })
 
-    const headleCreatePackage = (e) => {
+    const headleCreatePackage = async (e) => {
         e.preventDefault();
+
+        // console.log(import.meta.env.VITE_APP_API)
+
+        const res = await axios.post(import.meta.env.VITE_APP_API + '/package/CreatePackage', PackageData)
+        .then(res => {
+            if(res.data.Status === "Success"){
+                alert("Package Created Successfully")
+                window.location.reload()
+            }
+            else{
+                alert(res.data.Error)
+            }
+        })
+
 
 
     }
@@ -48,11 +66,11 @@ const AddPackage = () => {
                     </div>
                     <div className="md:grid grid-cols-2 gap-4 my-4">
                         <div className="">
-                            <input type="text" name="" id="" className="w-full h-10 bg-gray-200 rounded pl-2 md:my-0 my-2" required placeholder='Package Price'
+                            <input type="number" name="" id="" className="w-full h-10 bg-gray-200 rounded pl-2 md:my-0 my-2" required placeholder='Package Price'
                             onChange={e => SetPackageData({...PackageData, packagePrice:e.target.value})}/>
                         </div>
                         <div className="">
-                            <input type="number" name="" id="" className="w-full h-10 bg-gray-200 rounded pl-2 md:my-0 my-2" required placeholder='Package For'
+                            <input type="text" name="" id="" className="w-full h-10 bg-gray-200 rounded pl-2 md:my-0 my-2" required placeholder='Package For'
                             onChange={e => SetPackageData({...PackageData, packageFor:e.target.value})}/>
                         </div>
                     </div>
