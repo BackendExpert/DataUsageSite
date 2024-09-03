@@ -39,6 +39,7 @@ export default function App() {
           <Route path="NewPackage" element={<PrivateRoute ProtectRoute={<AddPackage /> } /> } />
           <Route path="ManagePackages" element={<PrivateRoute ProtectRoute={<ManagePackages /> } /> } />
           <Route path="PackageView/:id" element={<PrivateRoute ProtectRoute={<PackageView /> } /> } />
+          <Route path="PackageUsage" element={<PrivateRoute ProtectRoute={<PackageUpgrade /> } /> } />
         </Route>
       </Routes> 
     </BrowserRouter>
