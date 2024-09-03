@@ -28,11 +28,22 @@ const PackageView = () => {
       packagePrice: ''
     })
 
-    const headlePackageUpdate = (e) => {
+    const headlePackageUpdate = async (e) => {
       e.preventDefault()
 
       try{
-        console.log(UpdatePackage)
+        // console.log(UpdatePackage)
+
+        const res = await axios.post(import.meta.env.VITE_APP_API + `/package/UpdatePackage/${id}`,  UpdatePackage)
+        .then(res => {
+          if(res.data.Status === "Success"){
+            alert("Package Updated Successful")
+            window.location.reload()
+          }
+          else{
+            alert(res.data.Error)
+          }
+        })
       }
       catch(err) {
         console.log(err)
