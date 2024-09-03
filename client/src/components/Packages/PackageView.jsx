@@ -55,7 +55,13 @@ const PackageView = () => {
                       <td className='w-1/4 text-gray-500 border-l border-gray-200 pl-4'><span>Free Data : </span> Unlimited GB</td>
                       <td className='w-1/4 text-gray-500 border-l border-gray-200 pl-4'><span>Standed Data : </span> Unlimited GB</td>
                     </>
-
+                  )
+                }
+                else if(packageOneData.pkFor === "Youtube Unlimited"){
+                  return (
+                    <>
+                      <td className='w-1/4 text-gray-500 border-l border-gray-200 pl-4'>1 Week or (15GB) Youtube</td>
+                    </>
                   )
                 }
                 else{
