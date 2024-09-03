@@ -9,6 +9,18 @@ const UserPackagesSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
+    PackageStartAt: {
+        type: Date,
+        required: true,
+    },
+    PackageEndAt: {
+        type: Date,
+        required: true,
+    },
+    State: {
+        type: String,
+        required: true,
+    }
 });
 
 const UserPackages = mongoose.model('UserPackages', UserPackagesSchema);
