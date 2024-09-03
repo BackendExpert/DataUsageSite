@@ -20,8 +20,23 @@ const PackageView = () => {
       SetbtnValue(value)
     }
 
+    const [UpdatePackage, SetUpdatePackage] = useState({
+      packageDesc: '',
+      packageData: '',
+      packageFreeData: '',
+      packageStandedData: '',
+      packagePrice: ''
+    })
+
     const headlePackageUpdate = (e) => {
       e.preventDefault()
+
+      try{
+        console.log(UpdatePackage)
+      }
+      catch(err) {
+        console.log(err)
+      }
     }
 
         
@@ -143,14 +158,16 @@ const PackageView = () => {
                     <tr className='h-10 border-b border-gray-200'>
                       <td className='w-1/4 font-semibold'>Package Description</td>
                       <td className='text-gray-500 border-l border-gray-200 pl-4'>
-                        <input type="text" name="" id="" className="w-full h-10 my-1 rounded bg-gray-200 pl-2" placeholder='Package Description'/>
+                        <input type="text" name="" id="" className="w-full h-10 my-1 rounded bg-gray-200 pl-2" placeholder='Package Description'
+                        onChange={e => SetUpdatePackage({...UpdatePackage, packageDesc:e.target.value})}/>
                       </td>
                     </tr>
 
                     <tr className='h-10 border-b border-gray-200'>
                       <td className='w-1/4 font-semibold'>Package Data</td>
                       <td className='text-gray-500 border-l border-gray-200 pl-4'>
-                        <input type="number" name="" id="" className="w-full h-10 my-1 rounded bg-gray-200 pl-2" placeholder='Package Data'/>
+                        <input type="number" name="" id="" className="w-full h-10 my-1 rounded bg-gray-200 pl-2" placeholder='Package Data'
+                        onChange={e => SetUpdatePackage({...UpdatePackage, packageData:e.target.value})}/>
                       </td>
                     </tr>
 
@@ -167,8 +184,10 @@ const PackageView = () => {
                               <td className='w-1/4 font-semibold'>Package Data Structure</td>
                               <td className='text-gray-500 border-l border-gray-200 pl-4'>
                                 <div className="flex justify-between">
-                                  <input type="number" name="" id="" className="mr-1 w-full h-10 my-1 rounded bg-gray-200 pl-2" placeholder='Package Free Data'/>
-                                  <input type="number" name="" id="" className="ml-1 w-full h-10 my-1 rounded bg-gray-200 pl-2" placeholder='Package Standed Data'/>
+                                  <input type="number" name="" id="" className="mr-1 w-full h-10 my-1 rounded bg-gray-200 pl-2" placeholder='Package Free Data'
+                                  onChange={e => SetUpdatePackage({...UpdatePackage, packageFreeData:e.target.value})}/>
+                                  <input type="number" name="" id="" className="ml-1 w-full h-10 my-1 rounded bg-gray-200 pl-2" placeholder='Package Standed Data'
+                                  onChange={e => SetUpdatePackage({...UpdatePackage, packageStandedData:e.target.value})}/>
                                 </div>
                               </td>
                             </tr>
@@ -180,7 +199,8 @@ const PackageView = () => {
                     <tr className='h-10 border-b border-gray-200'>
                       <td className='w-1/4 font-semibold'>Package Price</td>
                       <td className='text-gray-500 border-l border-gray-200 pl-4'>
-                        <input type="number" name="" id="" className="w-full h-10 my-1 rounded bg-gray-200 pl-2" placeholder='Package Data'/>
+                        <input type="number" name="" id="" className="w-full h-10 my-1 rounded bg-gray-200 pl-2" placeholder='Package Data' 
+                        onChange={e => SetUpdatePackage({...UpdatePackage, packagePrice:e.target.value})}/>
                       </td>
                     </tr>
                   </table>
