@@ -78,6 +78,11 @@ const UserAccounts = () => {
                                                         <p className="text-green-500 font-bold">Active</p>
                                                     )
                                                 }
+                                                else if(item.Status === "Pending"){
+                                                    return(
+                                                        <p className="text-yellow-500 font-bold">Pending</p>
+                                                    )
+                                                }
                                                 else{
                                                     return(
                                                         <p className="text-red-500 font-bold">Deactive</p>
@@ -112,6 +117,11 @@ const UserAccounts = () => {
                                                     if(item.Status === "Active"){
                                                         return(
                                                             <p className="text-green-500 font-bold">Active</p>
+                                                        )
+                                                    }
+                                                    else if(item.Status === "Pending"){
+                                                        return(
+                                                            <p className="text-yellow-500 font-bold">Pending</p>
                                                         )
                                                     }
                                                     else{
