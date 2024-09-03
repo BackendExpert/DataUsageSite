@@ -82,7 +82,7 @@ const PackageView = () => {
             <td className='w-1/4 font-semibold'>Package Data Structure</td>
             {
               (() => {
-                if(packageOneData.pkFor === "Internet Unlimited"){
+                if(packageOneData.pkFor === "Internet Unlimited" || packageOneData.pkFor === "Social Media Unlimited" || packageOneData.pkFor === "Learning"){
                   return (
                     <>
                       <td className='w-1/4 text-gray-500 border-l border-gray-200 pl-4'><span>Free Data : </span> Unlimited GB</td>
@@ -94,6 +94,13 @@ const PackageView = () => {
                   return (
                     <>
                       <td className='w-1/4 text-gray-500 border-l border-gray-200 pl-4'>1 Week or ({packageOneData.pkData} GB) Youtube</td>
+                    </>
+                  )
+                }
+                else if(packageOneData.pkFor === "Gamming"){
+                  return (
+                    <>
+                      <td className='w-1/4 text-gray-500 border-l border-gray-200 pl-4'>{packageOneData.pkData} GB for Gamming</td>
                     </>
                   )
                 }
@@ -173,7 +180,7 @@ const PackageView = () => {
 
                     {
                       (() => {
-                        if(packageOneData.pkFor === "Internet Unlimited" || packageOneData.pkFor === "Youtube Unlimited"){
+                        if(packageOneData.pkFor === "Internet Unlimited" || packageOneData.pkFor === "Youtube Unlimited" || packageOneData.pkFor === "Learning" || packageOneData.pkFor === "Social Media Unlimited" || packageOneData.pkFor === "Gamming"){
                           return (
                             <div className=""></div>
                           )
