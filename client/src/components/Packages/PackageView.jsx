@@ -13,7 +13,7 @@ const PackageView = () => {
     }, [])
     
   return (
-    <div>PackageInfo</div>
+    <div>{packageOneData.pkDesc}</div>
   )
 }
 
