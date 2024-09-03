@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react'
 
 const NewAccount = () => {
@@ -12,7 +13,18 @@ const NewAccount = () => {
         e.preventDefault();
 
         try{
-            console.log(AccountData)
+            // console.log(AccountData)
+
+            const res = await axios.post(import.meta.env.VITE_APP_API + '/auth/CreateAccount', AccountData)
+            .then(res => {
+                if(res.data.Status === "Suceess"){
+                    alert("Account Created Successful")
+                    window.location.reload()
+                }
+                else{
+                    alert(res.data.Error)
+                }
+            })
         }
         catch (err) {
             console.log(err)
