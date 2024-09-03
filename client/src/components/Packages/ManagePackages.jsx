@@ -1,6 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 
 const ManagePackages = () => {
+
+    const [PackageData, SetPackageData] = useState([])
+
+    useEffect(() => {
+        const res = axios.get(import)
+    }, [])
     const data = [
         {name: "web Starter", packageUse: '5693', Status: "Active"},
         {name: "web Starter", packageUse: '5693', Status: "Active"},
