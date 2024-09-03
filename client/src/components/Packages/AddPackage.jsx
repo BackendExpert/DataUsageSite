@@ -70,8 +70,15 @@ const AddPackage = () => {
                             onChange={e => SetPackageData({...PackageData, packagePrice:e.target.value})}/>
                         </div>
                         <div className="">
-                            <input type="text" name="" id="" className="w-full h-10 bg-gray-200 rounded pl-2 md:my-0 my-2" required placeholder='Package For'
-                            onChange={e => SetPackageData({...PackageData, packageFor:e.target.value})}/>
+                            <select name="" id="" className='w-full h-10 bg-gray-200 rounded pl-2 md:my-0 my-2' required>
+                                <option value="">Select Package Type</option>
+                                <option value="Internet">Select Package Type</option>
+                                <option value="Internet Unlimited">Select Package Type</option>
+                                <option value="Social Media Unlimited">Select Package Type</option> 
+                                <option value="Social Media Unlimited">Select Package Type</option> 
+                                <option value="Social Media Unlimited">Select Package Type</option> 
+                                <option value="Social Media Unlimited">Select Package Type</option>                                                                
+                            </select>
                         </div>
                     </div>
 
