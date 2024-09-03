@@ -151,7 +151,7 @@ const UserAccounts = () => {
                                         </div>
                                     </td>
                                     <td>
-                                        <a href={'AccountData/' + item.email } className='text-blue-500 underline font-bold'>
+                                        <a href={'AccountData/' + item._id } className='text-blue-500 underline font-bold'>
                                             View
                                         </a>
                                     </td>
