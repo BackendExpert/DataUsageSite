@@ -32,6 +32,7 @@ const DashSide = () => {
         {id: 3, name: "Packages", link: '', icon: <BsWifi className='h-5 w-auto'/>, submenu: [
             {id: 1, name: "New Package ", link: '/Dashboard/NewPackage'},
             {id: 2, name: "Mange Packages ", link: '/Dashboard/ManagePackages'},
+            {id: 3, name: "Package Usage", link: '/Dashboard/UsagePackage'},
         ]}, 
         {id: 4, name: "Other Packages", link: '', icon: <BsBoxes className='h-5 w-auto'/>, submenu: [
             {id: 1, name: "PEO TV ", link: '/Dashboard/peoTV'},
