@@ -20,6 +20,7 @@ const UserPackagesSchema = new mongoose.Schema({
     State: {
         type: String,
         required: true,
+        default: 'Active',
     }
 });
 

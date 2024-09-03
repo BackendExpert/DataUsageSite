@@ -64,10 +64,34 @@ const PackageController = {
   UpdatePackage: async (req, res) => {
     try{
         const PackageID = req.params.id
-        const PackageData = req.body
+        const {
+            packageDesc,
+            packageData,
+            packageFreeData,
+            packageStandedData,
+            packagePrice
+        } = req.body
 
-        const PackageUpdate = await Package.findByIdAndUpdate(PackageID, { $set: PackageData }, { new: true })
-        return res.json({ Status: "Success" })
+        const PackageUpdate = await Package.findByIdAndUpdate(
+            PackageID,
+            { 
+               $set: {
+                pkDesc: packageDesc,
+                pkData: packageData,
+                pkFreeData: packageFreeData,
+                pkStadndedData: packageStandedData,
+                pkPrice: packagePrice
+               } 
+            },
+            { new: true })
+        
+        if(PackageUpdate){
+            return res.json({ Status: "Success" })
+        }
+        else{
+            return res.json({ Error: "Error"})
+        }
+        
     }
     catch(err){
         console.log(err)
