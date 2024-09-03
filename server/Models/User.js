@@ -25,6 +25,11 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    CurrentPackage: {
+        type: String,
+        required: true,
+        default: 'No Packages'
+    },
     Status: {
         type: String,
         required: true,
