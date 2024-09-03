@@ -156,7 +156,12 @@ const PackageView = () => {
 
                     {
                       (() => {
-                        if(packageOneData.pkFor !== "Internet Unlimited" || packageOneData.pkFor !== "Youtube Unlimited"){
+                        if(packageOneData.pkFor === "Internet Unlimited" || packageOneData.pkFor === "Youtube Unlimited"){
+                          return (
+                            <div className=""></div>
+                          )
+                        }
+                        else{
                           return (
                             <tr className='h-10 border-b border-gray-200'>
                               <td className='w-1/4 font-semibold'>Package Data Structure</td>
@@ -167,11 +172,6 @@ const PackageView = () => {
                                 </div>
                               </td>
                             </tr>
-                          )
-                        }
-                        else{
-                          return (
-                            <div className=""></div>
                           )
                         }
                       })()
