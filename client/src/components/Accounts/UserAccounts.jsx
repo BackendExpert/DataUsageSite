@@ -1,31 +1,30 @@
-import React, { useState } from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 
 const UserAccounts = () => {
+    const [AccountData, SetAccountData] = useState([])
 
-    const data = [
-        {email: "jehan@123.com", AccNo: '12345611', Status: "Active", UserType: "User"},
-        {email: "kmaml@123.com", AccNo: '12345232', Status: "Active", UserType: "User"},
-        {email: "asd@123.com", AccNo: '0812377305', Status: "Active", UserType: "User"},
-        {email: "dd@123.com", AccNo: '12323453', Status: "Active", UserType: "User"},
-        {email: "ss@123.com", AccNo: '55588811', Status: "Active", UserType: "User"},
-        {email: "jeaaahan@123.com", AccNo: '34545646', Status: "Active", UserType: "User"}        
-    ]
+    useEffect(() => {
+        const res = axios.get(import.meta.env.VITE_APP_API + '/userAcc/ViewAllAccountes')
+        .then(res => SetAccountData(res.data.Result))
+        .catch(err => console.log(err))
+    }, [])
 
     const [searchTerm, setSearchTerm] = useState('');
-    const [filteredData, setFilteredData] = useState(data);
+    const [filteredData, setFilteredData] = useState(AccountData);
 
     const handleSearch = (e) => {
         const value = e.target.value;
-        setSearchTerm(value);
+        setSearchTerm(AccountData);
     
-        if (value.length >= 3) {
+        if (AccountData.length >= 3) {
           setFilteredData(
-            data.filter((item) =>
-              item.AccNo.startsWith(value)
+            AccountData.filter((item) =>
+              item.AccNo.startsWith(AccountData)
             )
           );
         } else {
-          setFilteredData(data);
+          setFilteredData(AccountData);
         }
     };
 
