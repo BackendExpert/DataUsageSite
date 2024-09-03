@@ -26,7 +26,7 @@ const Dashboard = () => {
                         <div className="w-1/5 fixed">
                             <DashSide />
                         </div>
-                        <div className="md:w-full ml-[270px]">
+                        <div className="md:w-full md:ml-[270px]">
                             <DashNavAdmin />
                             <div className="py-4 px-6">
                                 <Outlet />
