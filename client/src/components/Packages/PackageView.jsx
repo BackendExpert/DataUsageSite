@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
+import { BsXCircleFill } from 'react-icons/bs'
 
 const PackageView = () => {
     const {id} = useParams()
@@ -11,7 +12,19 @@ const PackageView = () => {
       .then(res => SetPackageOneData(res.data.Result))
       .catch(err => console.log(err))
     }, [])
-    
+
+
+    const [btnValue, SetbtnValue] = useState(0)
+
+    const headleClick = (value) => {
+      SetbtnValue(value)
+    }
+
+    const headlePackageUpdate = (e) => {
+      e.preventDefault()
+    }
+
+        
   return (
     <div>
       <div className="bg-white rounded shadow-md p-4">
@@ -85,7 +98,52 @@ const PackageView = () => {
             <td className='text-gray-500 border-l border-gray-200 pl-4'>{packageOneData.pkFor} </td>
           </tr>
         </table>
+        {
+          (() => {
+            if(btnValue !== "Update"){
+              return (
+                <div className="mt-4">
+                  <button className='bg-blue-500 text-white rounded py-2 px-4' onClick={() => headleClick('Update')}>Update</button>
+                </div>
+              )
+            }
+            else{
+              return (
+                <div className=""></div>
+              )
+            }
+          })()
+        }
+
       </div>
+
+      {
+        (() => {
+          if(btnValue === "Update"){
+            return (
+              <div className="mt-2 bg-white rounded shadow-md p-4">
+                <div className="flex justify-between">
+                  <div className="">
+                    <h1><span className='font-semibold'>Update Package:</span> {packageOneData.PackageName}</h1>
+                  </div>
+                  <div className="">
+                    <BsXCircleFill className='text-red-500 h-6 w-full cursor-pointer' onClick={() => headleClick('UpdateClose')}/>
+                  </div>
+                </div>
+
+                <div className="mt-4">
+                  <form action="" onSubmit={headlePackageUpdate}></form>
+                </div>
+              </div>
+            )
+          }
+          else{
+            return (
+              <div className=""></div>
+            )
+          }
+        })()
+      }
     </div>
   )
 }
