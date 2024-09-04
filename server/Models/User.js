@@ -11,6 +11,12 @@ const UserSchema = new mongoose.Schema({
         required: true,
         unique: true,
     },
+    AccNo: {
+        type: String,
+        required: true,
+        unique: true,
+        default: 'AccNo'
+    },
     password: {
         type: String,
         required: true
@@ -19,10 +25,15 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    CurrentPackage: {
+        type: String,
+        required: true,
+        default: 'No Packages'
+    },
     Status: {
         type: String,
         required: true,
-        default: 'Deactive'
+        default: 'Pending'
     },
     createdAt: {
         type: Date,
