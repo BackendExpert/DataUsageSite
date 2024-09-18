@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { BsMortarboardFill, BsRouterFill } from "react-icons/bs";
+import { BsMortarboardFill, BsRouterFill, BsXCircleFill } from "react-icons/bs";
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import  secureLocalStorage  from  "react-secure-storage";
@@ -12,6 +12,13 @@ const SignIn = () => {
         email: '',
         password: ''
     })
+
+    const [ErrorMsg, SetErrorMsg] = useState("")
+
+    const CloseError = () => {
+        SetErrorMsg("")
+    }
+
 
     // send data to backend using axios
     const headleSubmit = async (e) => {
@@ -44,7 +51,7 @@ const SignIn = () => {
                 }
             }
             else{
-                alert(res.data.Error)
+                SetErrorMsg(res.data.Error)
             }
         }
         catch (err) {
@@ -52,42 +59,63 @@ const SignIn = () => {
         }
     }
 
+    
+
     return (
-        <div className="bg-[#0b2a58] min-h-screen w-full">
-            <div className="containerLogin">
-                <div className="imageDiv md:block hidden">
-                    <img src="https://wallpapers.com/images/high/data-fingerprint-system-brahlfrli6ga8qlt.webp" alt="" className='imageLogin'/>
-                </div>
-                <div className="viewForm">
-                    <div className="flex">
-                        <BsRouterFill className='h-12 w-auto text-green-500 ml-2'/>
-                        <h1 className="ml-2 text-2xl text-white font-semibold pt-1">Internet Provider</h1>
-                    </div>
-                    <hr />
+        <div className="bg-white w-full">
+            <div className="md:grid grid-cols-3 gap-3 md:my-[10%] my-[30%]">
+                <div className=""></div>
+                <div className="md:mx-0 mx-4">
                     <div className="">
-                        <h1 className="mb-2 mt-6 text-xl font-semibold text-white">SignIn</h1>
-                        <form onSubmit={headleSubmit} className='my-4'>
+                        <h1 className="mb-2 mt-6 font-semibold text-center text-2xl">Welcome to InternetService</h1>
+                        <p className="text-xl text-gray-500 text-center">To Continue, SignIn Here</p>
+
+                        {
+                            (() => {
+                                if(ErrorMsg === ""){
+                                    return (
+                                        <div className=""></div>
+                                    )
+                                }
+                                else{
+                                    return (
+                                        <div className="">
+                                            <div className="bg-red-500/20 my-4 px-8 flex justify-between rounded-md">
+                                                <p className="py-4  text-red-800 font-semibold">Error: {ErrorMsg}</p>
+                                                <p className="pt-4"><BsXCircleFill className='h-6 w-auto text-red-800 cursor-pointer' onClick={CloseError}/></p>
+                                            </div>
+                                        </div>
+                                    )
+                                }
+                            })()
+                        }
+
+
+
+                        <form onSubmit={headleSubmit} className='my-8'>
                             <div className="my-3 ">
-                                <label htmlFor="" className='text-white'>Email : </label>
-                                <input type="email" name=""  className="text-white w-full h-12 pl-2 rounded bg-blue-700/40" required placeholder='Enter Email Address'
+                                <label htmlFor="" className='text-gray-800 font-semibold'>Email : </label>
+                                <input type="email" name=""  className="text-gray-500 w-full h-12 pl-2 rounded bg-gray-200/80" required placeholder='Enter Email Address'
                                 onChange={e => SetLoginData({...LoginData, email:e.target.value})}/>
                             </div>
                             <div className="my-3 ">
-                                <label htmlFor="" className='text-white'>Password : </label>
-                                <input type="password" name=""  className="text-white w-full h-12 pl-2 rounded bg-blue-700/40" required placeholder='Enter Password' 
+                                <label htmlFor="" className='text-gray-800 font-semibold'>Password : </label>
+                                <input type="password" name=""  className="text-gray-500 w-full h-12 pl-2 rounded bg-gray-200/80" required placeholder='Enter Password' 
                                 onChange={e => SetLoginData({...LoginData, password:e.target.value})}/>
                             </div>
                             <div className="my-2 ">
                                 <button type='submit' className='mt-8 font-semibold w-full py-4 px-8 rounded bg-blue-500 text-white shadow-md duration-500 hover:bg-blue-600'>SignIn</button>
                             </div>
                         </form>
-                    </div>
-                    <div className="">
-                        <h1 className="text-white">Don't have Account ? <a href="SignUp" className='text-blue-400'>Register</a></h1>
-                    </div>        
-                    <h1 className="text-white mt-4 font-semibold">This site is developed only for Educational Purposes</h1>            
-                </div>
+                        <div className="flex justify-between">
+                            <div className="">
+                                <h1 className="text-blue-800 font-semibold">Forget Password</h1>
+                            </div>
 
+                        </div>
+                    </div>
+                </div>
+                <div className=""></div>
             </div>
         </div>
     )
