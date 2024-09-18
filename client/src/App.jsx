@@ -18,6 +18,7 @@ import ManagePackages from "./components/Packages/ManagePackages";
 import PackageView from "./components/Packages/PackageView";
 import PackageUsage from "./components/Packages/PackageUsage";
 import HomePage from "./components/Public/HomePage/HomePage";
+import Navbar from "./components/Public/Defaults/Navbar";
 
 
 
@@ -25,6 +26,7 @@ import HomePage from "./components/Public/HomePage/HomePage";
 export default function App() {
   return (
     <BrowserRouter>
+      <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/SignIn" element={<SignIn />} />
