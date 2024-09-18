@@ -152,6 +152,7 @@ const AccountData = () => {
                                             </select>
                                         </div>
                                     </div>
+                                    <input type="submit" value="Update Account" className='bg-blue-500 text-white py-2 px-4 rounded mt-4'/>
 
                                 </form>
                             </div>
