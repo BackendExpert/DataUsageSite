@@ -22,8 +22,6 @@ import Navbar from "./components/Public/Defaults/Navbar";
 import Footer from "./components/Public/Defaults/Footer";
 
 
-
-
 export default function App() {
   return (
     <BrowserRouter>
