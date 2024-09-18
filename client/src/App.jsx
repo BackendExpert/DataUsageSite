@@ -17,6 +17,7 @@ import AddPackage from "./components/Packages/AddPackage";
 import ManagePackages from "./components/Packages/ManagePackages";
 import PackageView from "./components/Packages/PackageView";
 import PackageUsage from "./components/Packages/PackageUsage";
+import HomePage from "./components/Public/HomePage/HomePage";
 
 
 
@@ -25,7 +26,8 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<SignIn />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/SignIn" element={<SignIn />} />
         <Route path="/SignUp" element={<SignUp /> } />
         <Route path="/Dashboard/" element={<PrivateRoute ProtectRoute={<Dashboard />} />} >
           <Route path="Home" element={<PrivateRoute ProtectRoute={<DashHome /> } /> } />
