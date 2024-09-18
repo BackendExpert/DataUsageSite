@@ -19,6 +19,7 @@ import PackageView from "./components/Packages/PackageView";
 import PackageUsage from "./components/Packages/PackageUsage";
 import HomePage from "./components/Public/HomePage/HomePage";
 import Navbar from "./components/Public/Defaults/Navbar";
+import Footer from "./components/Public/Defaults/Footer";
 
 
 
@@ -30,7 +31,6 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/SignIn" element={<SignIn />} />
-        <Route path="/SignUp" element={<SignUp /> } />
         <Route path="/Dashboard/" element={<PrivateRoute ProtectRoute={<Dashboard />} />} >
           <Route path="Home" element={<PrivateRoute ProtectRoute={<DashHome /> } /> } />
           <Route path="Summary" element={<PrivateRoute ProtectRoute={<SummaryData /> } /> } />
@@ -48,6 +48,7 @@ export default function App() {
           <Route path="PackageUsage" element={<PrivateRoute ProtectRoute={<PackageUsage /> } /> } />
         </Route>
       </Routes> 
+      <Footer />
     </BrowserRouter>
   )
 }
