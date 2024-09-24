@@ -1,5 +1,7 @@
 import React from 'react'
 
+
+
 const Navbar = () => {
   return (
     <div className='w-full bg-white shadow-md py-6 md:px-16 px-8'>
